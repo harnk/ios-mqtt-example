@@ -1,8 +1,6 @@
-# ios-mqtt-example
+ios-mqtt-example
 
-# Usage
-
-* switch __on__ the subscribed LED:
+* to switch __on__ the subscribed LED, from terminal do this:
 
 <!-- -->
     curl -X PUT --data-binary "1"  http://eclipse.mqttbridge.com/%2FMQTTExample%2FLED
