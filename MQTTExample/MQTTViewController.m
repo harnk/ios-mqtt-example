@@ -9,7 +9,8 @@
 #import "MQTTViewController.h"
 #import <MQTTKit.h>
 
-#define kMQTTServerHost @"iot.eclipse.org"
+//#define kMQTTServerHost @"iot.eclipse.org"
+#define kMQTTServerHost @"localhost"
 #define kTopic @"MQTTExample/LED"
 
 @interface MQTTViewController ()
@@ -55,7 +56,9 @@
     }];
 
     // connect the MQTT client
+    NSLog(@"connect the MQTT client");
     [self.client connectToHost:kMQTTServerHost completionHandler:^(MQTTConnectionReturnCode code) {
+        NSLog(@"connect the MQTT client returned code %lu", (unsigned long)code);
         if (code == ConnectionAccepted) {
             // The client is connected when this completion handler is called
             NSLog(@"client is connected with id %@", clientID);
